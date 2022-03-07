@@ -4,12 +4,18 @@ from sql_queries import create_table_queries, drop_table_queries
 
 
 def drop_tables(cur, conn):
+    """
+    Runs the queries from sql_queries.py in order to drop all the tables (if they exist)
+    """
     for query in drop_table_queries:
         cur.execute(query)
         conn.commit()
 
 
 def create_tables(cur, conn):
+    """
+    Runs the queries that create the tables with schemas specified in the create table statements from sql_queries.py
+    """
     for query in create_table_queries:
         cur.execute(query)
         conn.commit()
